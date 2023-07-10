@@ -13,6 +13,9 @@ Repository with algorithmic problem solutions from LeetCode, implemented in C++ 
 - [x] 876 Middle of the Linked List
 - [x] 2130 Maximum Twin Sum of a Linked List
 
+### Trees:
+    
+- [x] 111 Minimum Depth Of Binary Tree
 
 ### Basics:
 - [x] 412 Fizz Buzz
