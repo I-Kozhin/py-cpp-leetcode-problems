@@ -57,20 +57,20 @@ class Solution:
 
 if __name__ == '__main__':
     solution = Solution()
-    for CASE in TEST_CASES:
-        root = TreeNode(CASE[0])
-        current = root
-        queue = [current
-                 ]
-        for value in CASE[1:]:
-            if value is not None:
-                node = TreeNode(value)
-                current.left = node
-                queue.append(node)
-            else:
-                current.left = None
+    for case in TEST_CASES:
+        root = TreeNode(case[0])
+        stack = [root]
+        index = 1
+        while stack and index < len(case):
+            node = stack.pop()
+            if case[index] is not None:
+                node.left = TreeNode(case[index])
+                stack.append(node.left)
+            index += 1
 
-            if len(queue) > 1:
-                current = queue.pop(0)
+            if index < len(case) and case[index] is not None:
+                node.right = TreeNode(case[index])
+                stack.append(node.right)
+            index += 1
 
         print(solution.minDepth(root))
